@@ -20,10 +20,10 @@ int main () {
   cout << add(5,12); 
   cout << "\n";
   
-  cout << add(4.0, 8.1);
+  cout << add(4.0f, 8.1f);
   cout << "\n";
    
-  cout << add(5.5, 2);
+  cout << add(5.5f, 2);
   cout << "\n";
   return 0;
 } 
