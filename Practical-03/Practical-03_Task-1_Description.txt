@@ -29,7 +29,7 @@ iostream.h simply won't compile, or they have the old style header include the n
 std namespace into the root namespace. Hence, if a given piece of code using iostream.h is compiled on a randomly chosen, recent compiler, the results are 
 unpredictable. It may fail to compile due to simple lack of the header. It may fail to compile because the compiler tries to use the new style library, but the 
 code relies on functionality only present in the old iostream library. Or it may get built against the old style library.
---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 [The Advantages of New Over Old]
 
