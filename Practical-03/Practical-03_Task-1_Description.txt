@@ -1,0 +1,49 @@
+You should use #include <iostream>, not iostream.h; the .h form is very old and deprecated since years.
+
+A frequent piece of advice is often given to new C++ programmers is to use <iostream> instead of <iostream.h> or
+<fstream> instead of <fstream.h>. This is often given with only the explanation that the .h forms are deprecated 
+without explaining what the difference is and why, in fact, using the extensionless version is superior.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+
+[Background]
+
+The original iostream library was written to challenge the claim that a terse, type safe I/O system needed special language support. 
+It was developed at Bell Labs by Bjarne Stroustrup and shipped with the original C++ compiler, CFront and described in the first edition of 
+Stroustrup's The C++ Programming Language. This version of the iostream library lived in the headers iostream.h, fstream.h and so on.
+Now CFront, its library and The C++ Programming Langauge formed the de facto standard for C++ for some time. 
+Hence when other compiler vendors implemented C++, they copied the iostream library (amongst others).
+
+Sometime later, the C++ language entered the standardization process. This process focused both on the core language and the standard library, 
+of which the iostream library was to be part. The version of the iostream library that the Standards Committee produced was quite a bit different 
+from the CFront implementation. For one thing the standard library version was heavily templated. Other functional differences included the change in 
+several enumerations that controlled I/O. Essentially, while some of the old code would work with the new library, a lot still didn't.
+
+To ease transition, the C++ Standards Committee declared that code including the standard C++ headers would use include directives that lack an extension. 
+This allowed compiler vendors to ship the old style C++ library headers with the .h extension and the new style headers without. From the period following this
+decision by the Standards Committee to about 2002 this was the common decision by many compiler vendors. This was often coupled with deprecation warnings 
+when the old headers were included.
+
+However, many compilers in recent years have taken a different approach. Instead they either leave out the old style headers completely, so that code depending on
+iostream.h simply won't compile, or they have the old style header include the new style header and use using directives to pull the declarations from the
+std namespace into the root namespace. Hence, if a given piece of code using iostream.h is compiled on a randomly chosen, recent compiler, the results are 
+unpredictable. It may fail to compile due to simple lack of the header. It may fail to compile because the compiler tries to use the new style library, but the 
+code relies on functionality only present in the old iostream library. Or it may get built against the old style library.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+[The Advantages of New Over Old]
+
+There are several reasons why new code should be written using the extensionless version of the header files instead of the .h forms. 
+The first is the unpredictability of such code when compiled on modern compilers. As previously mentioned, the result of using the .h headers is 
+implementation specific. And as time goes by, the chance that a given compiler will have the old style library available decreases.
+
+Even given a compiler that has the CFront iostream library available, there are concrete benefits to using the standard version. For one thing, 
+the standard version has an interface that is exception aware. This includes both defining exceptions that the iostream library may throw, but also 
+reducing the number of ways that the iostream library may be interfaced in exception unsafe ways. For example, elimination of two stage construction of
+iostream objects reduces the possibility of leaking resources.
+
+The new style iostreams also integrate better with the rest of the Standard C++ Library. The best example of this is using istreambuf_iterators to load
+an entire file into a container.
+
+Also, the standard C++ library has better localization support. This includes the use of locales with stream objects to handle things such as determining 
+if a "." or a "," is used as a decimal seperator. It also includes wide character support to handle a larger range of local characters.
