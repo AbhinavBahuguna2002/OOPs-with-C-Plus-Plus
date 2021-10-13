@@ -1,4 +1,4 @@
-/* This program reverses the array using the traditional method */ 
+/* This program prints the reverse of the array using the traditional method */ 
 
 #include <iostream> 
 using namespace std;
