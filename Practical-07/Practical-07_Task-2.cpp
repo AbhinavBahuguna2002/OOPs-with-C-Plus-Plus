@@ -32,19 +32,21 @@ int main()
 	{
 		if (*(tm+i) == ' ') 
 		{ 
-			if (sp == 0) {
+			if (sp == 0) 
+			{
 			  day = s1.substr(0, i); 
 			  pos =i+1; 
 			}
 			
-			if (sp == 1) { 
+			if (sp == 1) 
+			{ 
 			  month = s1.substr(pos, i);
-		    }
-		    
-			sp++; 
+		        }
+		        sp++; 
 		}
 		i++;
-	}  
+	} // while ends
+	
 	cout << day << endl;
 	cout << month << endl;  
 	return 0;
