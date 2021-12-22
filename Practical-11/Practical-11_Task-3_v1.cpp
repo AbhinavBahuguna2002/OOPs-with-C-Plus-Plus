@@ -46,6 +46,11 @@ int main () {
 	obj2.display();
 
 	D obj3;
-	obj3.k=30;
+	obj3.k=30; // Error! 
+	/* As both class B and class C have access to k, ambiguity is created.
+	The compiler does not know which copy of k to access, either from B or C*/  
+	
 	obj3.display();
+	
+	return 0;
 }
