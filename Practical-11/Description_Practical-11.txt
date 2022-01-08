@@ -1,11 +1,12 @@
-Task-11.1 Inhertiance basics:
+Task-11.1 
+Inhertiance basics:
 WAP in c++ to create a Parent and Child interaction using inheritance. With this Parent and Child interaction try to perform these tasks:
 a. Call Parent class method in child class function without creating an object of parent class. 
 b. Call Parent class method in main method. 
 
 
-
-Task-11.2 Multiple inheritance in C++ 
+Task-11.2
+Multiple inheritance in C++ 
 Create two classes named Mammals and MarineAnimals. Create another class named BlueWhale which inherits both the above classes.
 Now create a function in each of these classes which prints "I am a mammal", "I am a marine animal" and "I belong to both the categories:
 Mammals as well as Marine Animals" repectively. 
@@ -17,8 +18,8 @@ Now, create an object for each of the above class and try calling:
 4- function of each of its parent by the object of BlueWhale
 
 
-
-Task-11.3 Diamond problem in multiple inheritance using C++ 
+Task-11.3 
+Diamond problem in multiple inheritance using C++ 
 a. WAP to illustrate Diamond Problem in multiple inheritance.
 b. its solution using Virtual base classes. Write seperate programs if required. 
 c. What else multiple inheritance can cause in a program, explain it by providing proper solution. 
