@@ -1,3 +1,9 @@
+/*
+String uniname has been taken as static because the university name might
+be same for a lot of students. 
+
+26-03-2022
+*/
 import java.util.*; 
 class Student {
 	
@@ -11,7 +17,6 @@ class Student {
  		this.name = name;
  		roll_no = roll; 
 		this.branch = branch; 
-		//this.uniname = uniname; 
 	} 
 	
 	void get () 
