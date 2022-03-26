@@ -1,3 +1,8 @@
+/*
+The variable names in method setDetails are same, so we use the keyword "this" to overcome the ambiguity & refer to the current object. 
+
+26-03-2022
+*/
 import java.util.*; 
 class Account {
 	
