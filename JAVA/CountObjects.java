@@ -1,5 +1,10 @@
+/*
+Program to count the number of times object has been made. 
+26-03-2022
+*/
+
 import java.util.*; 
-class Counter {
+class CountObjects {
 	
 	static int count=0; 
 	
