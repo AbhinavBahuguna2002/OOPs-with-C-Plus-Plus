@@ -1,3 +1,8 @@
+/*
+Constructor Chaining 
+
+26-03-2022
+*/
 class Xyz {
 	int w,x,y,z;
 	
