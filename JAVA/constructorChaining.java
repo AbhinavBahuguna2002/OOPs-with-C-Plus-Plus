@@ -13,12 +13,12 @@ class Xyz {
 	} 
 	Xyz (int a, int b, int c) 
 	{ 
-		this (a,b);  // constructor chaining 
+		this (a,b);  // constructor chaining ; calls constructor 1
 		y=c; 
 	} 
 	Xyz (int a, int b, int c, int d)  
 	{ 
-		this (a, b, c); 
+		this (a, b, c); // constructor chaining ; calls constructor 2
 		z=d; 
 	} 
 	void display () 
